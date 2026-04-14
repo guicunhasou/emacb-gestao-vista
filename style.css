@@ -1,0 +1,421 @@
+:root {
+  --color-primary-1: #f8b31a;
+  --color-primary-2: #f29b16;
+  --color-blue-1: #36a5dd;
+  --color-blue-2: #1662c8;
+  --color-blue-3: #025699;
+  --color-blue-4: #00609e;
+  --color-purple-1: #9747ff;
+  --color-purple-2: #6e38d5;
+  --color-light: #fffff9;
+  --color-text: #14324e;
+  --color-text-soft: #47637d;
+  --color-surface: #ffffff;
+  --color-border: rgba(2, 86, 153, 0.12);
+  --shadow-main: 0 18px 40px rgba(22, 98, 200, 0.14);
+  --shadow-soft: 0 10px 24px rgba(2, 86, 153, 0.1);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --max-width: 1280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(238, 235, 0, 0.2), transparent 22%),
+    linear-gradient(180deg, #f6fbff 0%, #ebf4fb 100%);
+  color: var(--color-text);
+  font-family: "Poppins", sans-serif;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-blue-2), var(--color-blue-3) 62%, var(--color-blue-4));
+  color: var(--color-light);
+  padding: 20px 16px 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-main);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 240px;
+  height: 240px;
+  top: -128px;
+  right: -92px;
+  background: rgba(248, 179, 26, 0.18);
+}
+
+.hero::after {
+  width: 180px;
+  height: 180px;
+  bottom: -84px;
+  left: -62px;
+  background: rgba(238, 235, 0, 0.14);
+}
+
+.hero__top,
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__top {
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.brand__logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand__date {
+  align-self: flex-end;
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.brand__date strong {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.brand__text {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+}
+
+.brand__name {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hero__content {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 249, 0.18),
+    rgba(255, 255, 249, 0.08)
+  );
+  border: 1px solid rgba(255, 255, 249, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: clamp(1.45rem, 4vw, 2.2rem);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.hero__content p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.dashboard {
+  padding: 16px;
+}
+
+.dashboard__groups {
+  display: grid;
+  gap: 18px;
+  background: transparent;
+}
+
+.group {
+  display: grid;
+  gap: 10px;
+  background: transparent;
+}
+
+.group__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  background: transparent !important;
+}
+
+.group,
+.dashboard__groups,
+.dashboard {
+  background: transparent !important;
+}
+
+.group__track::-webkit-scrollbar {
+  display: none;
+}
+
+.group__track .card {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-main);
+}
+
+.card__header {
+  padding: 16px 18px;
+  color: var(--color-light);
+}
+
+.card__header h2,
+.card__header h3 {
+  font-family: "Lexend Deca", sans-serif;
+  line-height: 1.15;
+}
+
+.card__header h2 {
+  font-size: 1.45rem;
+}
+
+.card__header h3 {
+  font-size: 1.1rem;
+}
+
+.card__body {
+  padding: 18px;
+}
+
+.card--teachers .card__header,
+.card__header--teachers {
+  background: linear-gradient(135deg, var(--color-primary-1), var(--color-primary-2));
+  color: #4c3500;
+}
+
+.card--teachers .card__body,
+.card__body--teachers {
+  background: linear-gradient(180deg, #fffdf2 0%, #fff7dc 100%);
+}
+
+.card--fundamental .card__header,
+.card__header--students {
+  background: linear-gradient(135deg, var(--color-blue-1), var(--color-blue-2));
+}
+
+.card--fundamental .card__body,
+.card__body--students {
+  background: linear-gradient(180deg, #f9fdff 0%, #eef7ff 100%);
+}
+
+.card--eja .card__header {
+  background: linear-gradient(135deg, var(--color-purple-1), var(--color-purple-2));
+}
+
+.card--eja .card__body {
+  background: linear-gradient(180deg, #fcf8ff 0%, #f3ebff 100%);
+}
+
+.metric-label {
+  text-align: center;
+  font-size: 0.96rem;
+  color: var(--color-text-soft);
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+.metric-value {
+  display: block;
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: clamp(2.6rem, 12vw, 4rem);
+  line-height: 1;
+  color: var(--color-blue-3);
+}
+
+.card--eja .metric-value {
+  color: var(--color-purple-2);
+}
+
+.metric-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.metric-details__item {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.metric-details__label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+  margin-bottom: 6px;
+}
+
+.metric-details__item strong {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.18rem;
+  color: var(--color-blue-3);
+}
+
+.card--eja .metric-details__item strong {
+  color: var(--color-purple-2);
+}
+
+.footer {
+  padding: 0 18px 18px;
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.78rem;
+}
+
+.footer strong {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.status-message {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  text-align: center;
+  display: block;
+}
+
+.status-message[hidden] {
+  display: none;
+}
+
+.status-message.is-error {
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+.status-message.is-success {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    padding: 24px;
+  }
+
+  .dashboard__groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .group__track {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    overflow: visible;
+    gap: 16px;
+    padding-bottom: 0;
+  }
+
+  .group__track .card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 24px;
+  }
+
+  .page {
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(2, 86, 153, 0.14);
+  }
+
+  .hero {
+    padding: 28px 28px 24px;
+  }
+
+  .hero__content {
+    padding: 22px 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .brand {
+    align-items: center;
+  }
+
+  .brand__logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .brand__name {
+    font-size: 1.2rem;
+  }
+
+  .hero__content h1 {
+    font-size: 1.3rem;
+  }
+  
+  .group,
+  .group__track,
+  .dashboard,
+  .dashboard__groups {
+    background: transparent !important;
+  }
+}

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Frequência Diária</title>
+    <link rel="icon" href="./favicon.ico?v=2" type="image/x-icon" />
+    <link rel="shortcut icon" href="./favicon.ico?v=3" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__top">
+          <div class="brand">
+            <img src="./logo.png" alt="Logo da escola" class="brand__logo" />
+          
+            <div class="brand__content">
+              <p class="brand__date">
+                Hoje: <strong id="data-hoje">--/--/----</strong>
+              </p>
+          
+              <div class="brand__text">
+                <span class="brand__name">Escola Municipal Armando da Costa Brito</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__content">
+          <h1>Painel de Frequência Diária</h1>
+          <p>Acompanhamento diário das faltas de professores e estudantes.</p>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="dashboard__groups">
+          <section class="group">
+            <div class="group__track">
+              <article class="card card--teachers">
+                <div class="card__header card__header--teachers">
+                  <h3>Professores — Anos Iniciais</h3>
+                </div>
+
+                <div class="card__body card__body--teachers">
+                  <p class="metric-label">Percentual de professores ausentes</p>
+                  <strong class="metric-value" id="percentual-professores-iniciais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total no dia</span>
+                      <strong id="total-professores-iniciais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-professores-iniciais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card card--teachers">
+                <div class="card__header card__header--teachers">
+                  <h3>Professores — Anos Finais</h3>
+                </div>
+
+                <div class="card__body card__body--teachers">
+                  <p class="metric-label">Percentual de professores ausentes</p>
+                  <strong class="metric-value" id="percentual-professores-finais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total no dia</span>
+                      <strong id="total-professores-finais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-professores-finais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="group">
+            <div class="group__track">
+              <article class="card card--students">
+                <div class="card__header card__header--students">
+                  <h3>Fundamental — Anos Iniciais</h3>
+                </div>
+
+                <div class="card__body card__body--students">
+                  <p class="metric-label">Percentual de faltas</p>
+                  <strong class="metric-value" id="percentual-fundamental-iniciais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total de alunos</span>
+                      <strong id="total-fundamental-iniciais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-fundamental-iniciais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card card--students">
+                <div class="card__header card__header--students">
+                  <h3>Fundamental — Anos Finais</h3>
+                </div>
+
+                <div class="card__body card__body--students">
+                  <p class="metric-label">Percentual de faltas</p>
+                  <strong class="metric-value" id="percentual-fundamental-finais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total de alunos</span>
+                      <strong id="total-fundamental-finais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-fundamental-finais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="group">
+            <div class="group__track">
+              <article class="card card--eja">
+                <div class="card__header card__header--students">
+                  <h3>EJA — Anos Iniciais</h3>
+                </div>
+
+                <div class="card__body card__body--students">
+                  <p class="metric-label">Percentual de faltas</p>
+                  <strong class="metric-value" id="percentual-eja-iniciais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total de alunos</span>
+                      <strong id="total-eja-iniciais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-eja-iniciais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card card--eja">
+                <div class="card__header card__header--students">
+                  <h3>EJA — Anos Finais</h3>
+                </div>
+
+                <div class="card__body card__body--students">
+                  <p class="metric-label">Percentual de faltas</p>
+                  <strong class="metric-value" id="percentual-eja-finais">0,0%</strong>
+
+                  <div class="metric-details">
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Total de alunos</span>
+                      <strong id="total-eja-finais">0</strong>
+                    </div>
+
+                    <div class="metric-details__item">
+                      <span class="metric-details__label">Ausentes</span>
+                      <strong id="ausentes-eja-finais">0</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Data de referência: <strong id="data-referencia">--/--/----</strong>
+        </p>
+        <p id="status-message" class="status-message" hidden></p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
